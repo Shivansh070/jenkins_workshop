@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Define the folder path
-                    def folderPath = "C:\Users\sheen\OneDrive\Desktop\handson-assesment-Shivansh070"
+                    def folderPath = "C:/Users/sheen/OneDrive/Desktop/handson-assesment-Shivansh070"
 
                     // Create the folder if it doesn't exist
                     if (!fileExists(folderPath)) {
