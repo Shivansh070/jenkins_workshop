@@ -1,21 +1,21 @@
-
 pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Create Folder') {
             steps {
-                echo 'Hello World'
-            }
-        }
-    stage('Hi') {
-            steps {
-                echo 'Hi World'
-            }
-        }
-    stage('Bye') {
-            steps {
-                echo 'Bye World'
+                script {
+                    // Define the folder path
+                    def folderPath = "C:\Users\sheen\OneDrive\Desktop\handson-assesment-Shivansh070"
+
+                    // Create the folder if it doesn't exist
+                    if (!fileExists(folderPath)) {
+                        sh "mkdir -p ${folderPath}"
+                        echo "Folder created at ${folderPath}"
+                    } else {
+                        echo "Folder already exists at ${folderPath}"
+                    }
+                }
             }
         }
     }
